@@ -1,4 +1,4 @@
-const BASE_URL = 'https://wayfinding.bitsourcedocker.com';
+const BASE_URL = window.location.origin;
 
 // 4 entrances
 const ENTRANCES = {
