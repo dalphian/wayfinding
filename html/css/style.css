@@ -8,9 +8,9 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); min-height: 100vh; overflow-x: hidden; }
 
-  .header { background: var(--navy); padding: 13px 18px; display: flex; align-items: center; gap: 11px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.28); }
-  .header-logo { width: 36px; height: 36px; background: var(--teal); border-radius: 9px; display: flex; align-items: center; justify-content: center; }
-  .header-logo svg { width: 20px; height: 20px; }
+  .header { background: var(--navy); padding: 10px 18px; display: flex; align-items: center; gap: 15px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.28); }
+  .header-logo { height: 44px; display: flex; align-items: center; justify-content: center; background: white; border-radius: 4px; padding: 2px 8px; }
+  .header-logo img { height: 36px; width: auto; }
   .header-title { color: #fff; font-size: 1rem; font-weight: 600; }
   .header-sub { color: var(--gray-2); font-size: .7rem; margin-top: 1px; }
   .entrance-badge { margin-left: auto; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); color: #fff; border-radius: 20px; padding: 4px 12px; font-size: .68rem; font-weight: 500; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; max-width: 160px; text-align: right; }
@@ -90,12 +90,15 @@
   .notfound-title { font-family: 'DM Serif Display', serif; font-size: 1.35rem; color: var(--navy); margin-bottom: 8px; }
   .notfound-text { color: var(--gray-3); font-size: .88rem; line-height: 1.5; }
 
+  .footer { width: 100%; display: flex; justify-content: center; padding: 20px 0; background: var(--white); border-top: 1px solid var(--gray-2); margin-top: 20px; }
+  .footer-card { width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
   @keyframes drawPath { to { stroke-dashoffset: 0; } }
   @keyframes pulseDot { 0%,100% { r: 5; opacity: 1; } 50% { r: 9; opacity: .5; } }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
   @media print {
-    .header, .print-all-btn, .admin-sub, .admin-heading, .open-btn { display: none !important; }
+    .header, .footer, .print-all-btn, .admin-sub, .admin-heading, .open-btn { display: none !important; }
     body { background: #fff; margin: 0; }
     .admin-wrap { padding: 0; }
     .qr-grid { display: block; }
