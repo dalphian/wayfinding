@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  wayfinding:
+    image: nginx:alpine
+    container_name: hospital-wayfinding
+    expose:
+      - "80"
+      - "443"
+    environment:
+      - VIRTUAL_HOST=wayfinding.bitsourcedocker.com
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=wayfinding.bitsourcedocker.com
+      - LETSENCRYPT_EMAIL=tech@bitsourceky.com
+    volumes:
+      - ./files:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - proxy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+networks:
+  proxy:
+    external: true
+    name: nginx-proxy
