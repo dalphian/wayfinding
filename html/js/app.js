@@ -129,6 +129,10 @@ function renderDestinationList() {
 
 function showDirections(destId) {
   const path = pathfinder.findPath(currentEntrance, destId);
+  if (path.length === 0) {
+    alert("Sorry, no path found to this destination. Please consult staff.");
+    return;
+  }
   const dest = pathfinder.nodes[destId];
   const start = pathfinder.nodes[currentEntrance];
 

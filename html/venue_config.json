@@ -36,15 +36,14 @@
       "nodes": {
         "p2_ent": {"x": 862, "y": 153, "type": "entrance", "label": "Parking Garage 2F"},
         "elev_2f": {"x": 425, "y": 153, "type": "elevator", "portal_id": "main_elev"},
-        "sb_jct": {"x": 425, "y": 153, "type": "junction"},
         "c2_jct": {"x": 710, "y": 153, "type": "junction"},
         "sb_dest": {"x": 425, "y": 83, "type": "destination", "label": "Starbucks", "icon": "☕"},
         "c2_dest": {"x": 710, "y": 83, "type": "destination", "label": "Clinic 2", "icon": "🏥"}
       },
       "edges": [
-        ["p2_ent", "c2_jct", "Walk west from the Parking Garage"],
-        ["c2_jct", "sb_jct", "Continue west toward the elevators"],
-        ["sb_jct", "sb_dest", "Starbucks is directly ahead to the north"],
+        ["elev_2f", "c2_jct", "Walk east along the second floor corridor"],
+        ["elev_2f", "sb_dest", "Starbucks is directly ahead to the north"],
+        ["c2_jct", "p2_ent", "Continue east toward the Parking Garage"],
         ["c2_jct", "c2_dest", "Turn north into Clinic 2"]
       ]
     }
