@@ -1,0 +1,52 @@
+{
+  "venue": "Pikeville Medical Center",
+  "floors": [
+    {
+      "id": 1,
+      "label": "First Floor",
+      "svg": "map1F",
+      "nodes": {
+        "main_ent": {"x": 142, "y": 153, "type": "entrance", "label": "Main Entrance"},
+        "ed_ent": {"x": 158, "y": 22, "type": "entrance", "label": "ED Entrance"},
+        "p1_ent": {"x": 862, "y": 153, "type": "entrance", "label": "Parking Garage 1F"},
+        "elev_1f": {"x": 425, "y": 153, "type": "elevator", "portal_id": "main_elev"},
+        "ed_jct": {"x": 158, "y": 153, "type": "junction"},
+        "heart_jct": {"x": 577, "y": 153, "type": "junction"},
+        "sleep_jct": {"x": 527, "y": 153, "type": "junction"},
+        "ed_dest": {"x": 268, "y": 83, "type": "destination", "label": "Emergency Department", "icon": "🚨"},
+        "heart_dest": {"x": 577, "y": 83, "type": "destination", "label": "Heart Institute", "icon": "❤️"},
+        "sleep_dest": {"x": 503, "y": 243, "type": "destination", "label": "Sleep Clinic", "icon": "😴"}
+      },
+      "edges": [
+        ["main_ent", "ed_jct", "Enter through Main Entrance and go east"],
+        ["ed_jct", "ed_ent", "Go north toward the ED entrance"],
+        ["ed_ent", "ed_dest", "Walk south into the ED check-in area"],
+        ["ed_jct", "elev_1f", "Continue east along the main corridor"],
+        ["elev_1f", "sleep_jct", "Pass the elevator and continue east"],
+        ["sleep_jct", "heart_jct", "Continue east past the Heart Institute junction"],
+        ["heart_jct", "p1_ent", "Continue east toward the Parking Garage"],
+        ["heart_jct", "heart_dest", "Turn north into the Heart Institute"],
+        ["sleep_jct", "sleep_dest", "Turn south into the Sleep Clinic corridor"]
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Second Floor",
+      "svg": "map2F",
+      "nodes": {
+        "p2_ent": {"x": 862, "y": 153, "type": "entrance", "label": "Parking Garage 2F"},
+        "elev_2f": {"x": 425, "y": 153, "type": "elevator", "portal_id": "main_elev"},
+        "sb_jct": {"x": 425, "y": 153, "type": "junction"},
+        "c2_jct": {"x": 710, "y": 153, "type": "junction"},
+        "sb_dest": {"x": 425, "y": 83, "type": "destination", "label": "Starbucks", "icon": "☕"},
+        "c2_dest": {"x": 710, "y": 83, "type": "destination", "label": "Clinic 2", "icon": "🏥"}
+      },
+      "edges": [
+        ["p2_ent", "c2_jct", "Walk west from the Parking Garage"],
+        ["c2_jct", "sb_jct", "Continue west toward the elevators"],
+        ["sb_jct", "sb_dest", "Starbucks is directly ahead to the north"],
+        ["c2_jct", "c2_dest", "Turn north into Clinic 2"]
+      ]
+    }
+  ]
+}
